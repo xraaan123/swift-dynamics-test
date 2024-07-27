@@ -8,36 +8,39 @@ const NavBar = () => {
     const router = useRouter();
     const pathname = usePathname();
 
+    // const pathnameClick = () => {
+    //     console.log(pathname);
+    // }
+
     const headerName = () => {
         switch (pathname) {
-            case '${path}/layout-style':
+            case '/en/layout-style':
                 return 'Layout & Style';
-            case '/form':
+            case '/en/form':
                 return 'Form';
             default:
-                return 'Home';
+                return '';
         }
     }
-    // const shoot = () => {
-    //     alert(headerName());
-    // }
 
     return (
         /*  */
         <nav className='fixed top-0 left-0 w-full px-6 lg:px-20 py-5'>
             <div className='mx-auto flex justify-between items-center max-w-[1440px]'>
                 <Link href='/' >
-                    <h1 className='text-xl font-semibold' >
+                    <button className={`${headerName() === '' ?
+                        ('') :
+                        ('border-black border-2 p-1 rounded-lg text-xl font-semibold')}`}>
                         {headerName()}
-                    </h1>
+                    </button>
                 </Link >
 
-                {/* <Link href='/test-button'>
-                    test page
-                </Link> */}
+                {/* <button onClick={pathnameClick}>
+                    check pathname
+                </button> */}
                 <DropdownLanguage />
             </div>
-        </nav>
+        </nav >
     )
 }
 
