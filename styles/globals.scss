@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "./shapes.module.scss";
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+} */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    90deg,
+    rgba(255, 162, 0, 0.6418942577030813) 0%,
+    rgba(110, 218, 120, 0.6082808123249299) 100%
+  );
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.triangle-up {
+  @include triangle("up", 120px, #555);
+}
+
+.triangle-down {
+  @include triangle("down", 120px, #555);
+}
+
+.triangle-left {
+  @include triangle("left", 120px, #555);
+}
+
+.triangle-right {
+  @include triangle("right", 120px, #555);
+}
+
+.square-square {
+  @include square("square", 120px, #555);
+}
+
+.square-rectangle {
+  @include square("rectangle", 120px, #555);
+}
+
+.square-trapezoid {
+  border-bottom: 120px solid #555;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  height: 0;
+  width: 195px;
+
+  &:hover {
+    border-bottom: 120px solid gray;
+  }
+}
+
+.square-parallelogram {
+  width: 200px;
+  height: 120px;
+  transform: skew(20deg);
+  background: #555;
+
+  &:hover {
+    background-color: gray;
+  }
+}
+
+.circle-circle {
+  @include circle("circle", 120px, #555);
+}
+
+.circle-oval {
+  @include circle("oval", 120px, #555);
+}
+
+.ant-btn.ant-btn-primary,
+.ant-btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  &:hover {
+    background-color: var(--primary-hover-color) !important;
+    border-color: var(--primary-hover-color) !important;
+  }
+}

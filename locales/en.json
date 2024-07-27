@@ -1,0 +1,15 @@
+{
+  "HomePage": {
+    "cardTitle1": "Test no.1",
+    "cardTitle2": "Test no.2",
+    "cardContent1": "Layout & Style",
+    "cardContent2": "Form Management",
+    "english": "English",
+    "thai": "Thai"
+  },
+  "LayoutStyle": {
+    "moveLeft": "Move shape to left",
+    "moveRight": "Move shape to left",
+    "swapRow": "Swap row"
+  }
+}

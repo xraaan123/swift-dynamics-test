@@ -1,0 +1,65 @@
+@mixin triangle($direction, $size, $color) {
+  width: 0;
+  height: 0;
+  border-style: solid;
+
+  @if $direction == "up" {
+    border-left: calc($size / 2) solid transparent;
+    border-right: calc($size / 2) solid transparent;
+    border-bottom: $size solid $color; // Triangle color
+  } @else if $direction == "down" {
+    border-left: calc($size / 2) solid transparent;
+    border-right: calc($size / 2) solid transparent;
+    border-top: $size solid $color; // Triangle color
+  } @else if $direction == "left" {
+    border-top: calc($size / 2) solid transparent;
+    border-bottom: calc($size / 2) solid transparent;
+    border-right: $size solid $color; // Triangle color
+  } @else if $direction == "right" {
+    border-top: calc($size / 2) solid transparent;
+    border-bottom: calc($size / 2) solid transparent;
+    border-left: $size solid $color; // Triangle color
+  }
+}
+
+@mixin square($type, $size, $color) {
+  background-color: $color;
+
+  @if $type == "square" {
+    height: $size;
+    width: $size;
+  } @else if $type == "rectangle" {
+    height: $size;
+    width: calc($size * 2);
+  }
+
+  &:hover {
+    background-color: gray;
+  }
+}
+
+@mixin circle($type, $size, $color) {
+  background-color: #555;
+  height: $size;
+  border-radius: 50%;
+
+  @if $type == "circle" {
+    width: $size;
+  } @else if $type == "oval" {
+    width: calc($size * 2);
+  }
+
+  &:hover {
+    background-color: gray;
+  }
+}
+
+@mixin shape($shape, $direction: null, $size: null, $color: null, $type: null) {
+  @if $shape == "triangle" {
+    @include triangle($direction, $size, $color);
+  } @else if $shape == "square" {
+    @include square($type, $size, $color);
+  } @else if $shape == "circle" {
+    @include circle($type, $size, $color);
+  }
+}
