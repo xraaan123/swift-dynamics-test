@@ -25,7 +25,7 @@ const NavBar = () => {
 
     return (
         /*  */
-        <nav className='fixed top-0 left-0 w-full px-6 lg:px-20 py-5'>
+        <nav className='top-0 left-0 w-full px-6 lg:px-20 py-5'>
             <div className='mx-auto flex justify-between items-center max-w-[1440px]'>
                 <Link href='/' >
                     <button className={`${headerName() === '' ?

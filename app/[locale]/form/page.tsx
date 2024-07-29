@@ -1,21 +1,10 @@
-// import { Select, Input, DatePicker, DatePickerProps, Radio } from "antd";
-
-import CustomForm from "@/components/CustomForm";
-import CustomTable from "@/components/CustomTable";
+import CustomForm from "@/components/Form/CustomForm";
 
 const Page = () => {
 
-    // const [value, setValue] = useState(1);
-
-
-    // const onChange: DatePickerProps['onChange'] = (date, dateString) => {
-    //     console.log(date, dateString);
-    // }
-
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col w-full">
             <CustomForm />
-            <CustomTable />
         </div>
     )
 }

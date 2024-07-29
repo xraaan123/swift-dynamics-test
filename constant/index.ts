@@ -1,32 +1,132 @@
-export const shapes = [
+import { countries } from "@/config/countries";
+
+export const components = [
   {
-    shape: "triangle",
-    type: ["up", "down", "left", "right"],
-    size: "120px",
+    label: "Title:",
+    name: "title",
+    component: "select",
+    options: ["Mr.", "Mrs.", "Ms."],
+    rules: [
+      {
+        required: true,
+        message: "Please select your title!",
+      },
+    ],
   },
   {
-    shape: "square",
-    type: ["square", "rectangle"],
-    size: "50px",
+    label: "First name:",
+    name: "firstName",
+    component: "input",
+    rules: [
+      {
+        required: true,
+        message: "Please enter your first name!",
+      },
+    ],
   },
   {
-    shape: "trapezoid",
-    type: null,
-    size: "125px",
+    label: "Last name:",
+    name: "lastName",
+    component: "input",
+    rules: [
+      {
+        required: true,
+        message: "Please enter your last name!",
+      },
+    ],
   },
   {
-    shape: "parallelogram",
-    type: null,
-    size: "50px",
+    label: "Birthday:",
+    name: "birthday",
+    component: "datepicker",
+    rules: [
+      {
+        required: true,
+        message: "Please select your birthday!",
+      },
+    ],
   },
   {
-    shape: "circle",
-    type: ["circle", "oval"],
+    label: "Nationality:",
+    name: "nationality",
+    component: "select",
+    options: countries.map((country) => ({
+      name: country.name,
+      code: country.dial_code,
+      value: country.nationality, // or another unique identifier
+    })),
+    rules: [
+      {
+        required: true,
+        message: "Please select your nationality!",
+      },
+    ],
+  },
+  {
+    label: "Citizen ID:",
+    name: "citizenId",
+    component: "customInput",
+    rules: [
+      {
+        required: true,
+        message: "Please enter your citizen ID!",
+      },
+    ],
+  },
+  {
+    label: "Gender:",
+    name: "gender",
+    component: "radio",
+    options: ["Male", "Female", "Other"],
+    rules: [
+      {
+        required: true,
+        message: "Please select your gender!",
+      },
+    ],
+  },
+  {
+    label: "Mobile phone:",
+    name: "mobilePhone",
+    component: "customSelect",
+  },
+  {
+    label: "Passport no.:",
+    name: "passportId",
+    component: "input",
+  },
+  {
+    label: "Expected salary:",
+    name: "expectedSalary",
+    component: "input",
+    rules: [
+      {
+        required: true,
+        message: "Please enter your expected salary!",
+      },
+    ],
   },
 ];
 
-export const titles = [
+export const tableColumns = [
   {
-    value: ''
-  }
-]
+    title: "Name",
+    dataIndex: "name",
+    key: "name",
+  },
+  {
+    title: "Gender",
+    dataIndex: "gender",
+    key: "gender",
+  },
+  {
+    title: "Mobile number",
+    dataIndex: "mobileNumber",
+    key: "mobileNumber",
+  },
+  {
+    title: "Nationality",
+    dataIndex: "nationality",
+    key: "nationality",
+  },
+];
